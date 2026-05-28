@@ -1,16 +1,14 @@
 ---
-// src/components/astro/ui/UploadIcon.astro
-
 type Props = {
-  title: string;
+  label: string;
 };
 
-const { title } = Astro.props;
+const { label } = Astro.props;
 ---
 
 <div
   class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-sm font-semibold text-gray-700"
   aria-hidden="true"
 >
-  {title}
+  {label}
 </div>

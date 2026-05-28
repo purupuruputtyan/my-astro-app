@@ -1,31 +1,26 @@
 ---
-import '../styles/global.css';
-import IconCard from "../pages/components/astro/ui/IconCard.astro";
-import FileImportButton from "../pages/components/react/ui/FileImportButton";
-import UploadIcon from "../pages/components/astro/ui/UploadIcon.astro";
+import Layout from '@/layouts/Layout.astro';
+import IconCard from '@/components/astro/ui/IconCard.astro';
+import UploadIcon from '@/components/astro/ui/UploadIcon.astro';
+import FileImportButton from '@/components/react/ui/FileImportButton';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
+<Layout>
+  <main class="p-8">
+    <h1 class="mb-6 text-2xl font-bold text-gray-900">Astro</h1>
 
+    <div
+      class="flex w-full flex-nowrap items-center justify-between gap-4 rounded-lg border border-gray-200 bg-white p-4"
+    >
+      <IconCard title="CSVファイルをインポート">
+        <UploadIcon slot="icon" label="プラン" />
+      </IconCard>
 
-<IconCard title="CSVファイルをインポート">
-  <UploadIcon slot="icon" title="プラン" />
-
-  <FileImportButton
-    client:load
-    inputId="csv-import"
-    accept=".csv"
-  />
-</IconCard>
-	</body>
-</html>
+      <FileImportButton
+        client:load
+        inputId="csv-import"
+        accept=".csv"
+      />
+    </div>
+  </main>
+</Layout>
